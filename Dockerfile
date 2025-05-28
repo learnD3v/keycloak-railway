@@ -15,9 +15,6 @@ ENV KEYCLOAK_ADMIN_PASSWORD=admin
 # Indica que Keycloak va detrás de un proxy de borde (Railway)
 ENV KC_PROXY=edge
 
-# Dominio público que Railway te asignó:
-ENV KC_HOSTNAME=keycloak-railway-production-b842.up.railway.app
-
 # URL base pública (frontend de usuarios)
 ENV KC_HOSTNAME_URL=https://keycloak-railway-production-b842.up.railway.app
 
