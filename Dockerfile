@@ -3,7 +3,7 @@ FROM quay.io/keycloak/keycloak:21.1.1
 
 # Configuración de la base de datos PostgreSQL externa
 ENV KC_DB=postgres
-ENV KC_DB_URL=jdbc:postgresql://yamanote.proxy.rlwy.net:31377/railway  
+ENV KC_DB_URL=jdbc:postgresql://postgres.railway.internal:5432/railway  
 ENV KC_DB_USERNAME=postgres
 ENV KC_DB_PASSWORD=bpgAvHqwqTEfmUtXUwaDAQllMtlOiqTy
 
