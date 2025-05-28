@@ -18,7 +18,8 @@ ENV KC_HOSTNAME_STRICT=false
 ENV KC_LOGLEVEL=DEBUG
 
 # ⬅️ Esta línea permite que Keycloak use el puerto que Railway le asigna
-CMD ["start-dev", "--http-port=${PORT}"]
+CMD ["sh", "-c", "kc.sh start-dev --http-port=${PORT}"]
+
 
 #postgresql://postgres:bpgAvHqwqTEfmUtXUwaDAQllMtlOiqTy@postgres.railway.internal:5432/railway
 #postgresql://postgres:bpgAvHqwqTEfmUtXUwaDAQllMtlOiqTy@yamanote.proxy.rlwy.net:31377/railway
