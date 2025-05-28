@@ -9,7 +9,7 @@ ENV KC_DB_PASSWORD=bpgAvHqwqTEfmUtXUwaDAQllMtlOiqTy
 
 # Usuario administrador inicial de Keycloak
 ENV KEYCLOAK_ADMIN=admin
-ENV KEYCLOAK_ADMIN=admin
+ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
 # Habilitar HTTP para la consola de administración
 ENV KC_HTTP_ENABLED=true
