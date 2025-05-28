@@ -1,34 +1,27 @@
 # Usar la imagen oficial de Keycloak desde Quay.io
 FROM quay.io/keycloak/keycloak:21.1.1
 
-# ————— Configuración de la base de datos PostgreSQL externa (Railway) —————
+# Configuración de la base de datos PostgreSQL externa
 ENV KC_DB=postgres
 ENV KC_DB_URL=jdbc:postgresql://yamabiko.proxy.rlwy.net:59323/railway
 ENV KC_DB_USERNAME=postgres
 ENV KC_DB_PASSWORD=tljljcrTyeUsqAyJwyzjJyhvfBhrTCpp
 
-# ————— Credenciales de administrador de Keycloak —————
+# Usuario administrador inicial de Keycloak
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
-# ————— Configuración HTTP / Proxy / Hostname —————
-# Indica que Keycloak va detrás de un proxy de borde (Railway)
-ENV KC_PROXY=edge
-
-# URL base pública (frontend de usuarios)
-ENV KC_HOSTNAME_URL=https://keycloak-railway-production-b842.up.railway.app
-
-# URL específica de la consola de administración
-ENV KC_HOSTNAME_ADMIN_URL=https://keycloak-railway-production-b842.up.railway.app/admin
-
-# Habilitar HTTP interno (Railway maneja HTTPS externamente)
+# Habilitar HTTP para la consola de administración
 ENV KC_HTTP_ENABLED=true
 
-# Permitir hostnames no estrictos
+# Deshabilitar la restricción de hostname
 ENV KC_HOSTNAME_STRICT=false
 
-# Nivel de logs
+# Nivel de logs para depuración (opcional)
 ENV KC_LOGLEVEL=DEBUG
 
-# ————— Arranque en modo desarrollo —————
+# Iniciar Keycloak en modo de desarrollo
 CMD ["start-dev"]
+
+
+#postgresql://postgres:tljljcrTyeUsqAyJwyzjJyhvfBhrTCpp@yamabiko.proxy.rlwy.net:59323/railway
