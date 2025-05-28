@@ -1,5 +1,4 @@
-FROM quay.io/keycloak/keycloak:21.1.1
-
+FROM quay.io/keycloak/keycloak:latest
 # ————— Configuración de la base de datos PostgreSQL externa (Railway) —————
 ENV KC_DB=postgres
 ENV KC_DB_URL=jdbc:postgresql://yamabiko.proxy.rlwy.net:59323/railway
